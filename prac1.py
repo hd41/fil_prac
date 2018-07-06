@@ -53,21 +53,27 @@ def diagonals():
         print('')
     print('done')
 
-def diamond():
-    for i in range(5):
-        for j in range(5-(i+1)):
+def diamond(n):
+    for i in range(n):
+        for j in range(n-(i+1)):
             print (" ",end=" ")
         for k in range(2*i+1):
             print('*',end=' ')
         print('')
-    for i in range(4):
+    for i in range(n-1):
         for j in range(i+1):
             print (" ",end=" ")
-        for k in range(2*(3-i)+1):
+        for k in range(2*((n-2)-i)+1):#3
             print('*',end=' ')
         print('')
 
-def bordered_diamond():
+def diamond2(n):
+    for i in range(n):
+        print(" "*(n-(i+1))+(2*i+1)*'*')
+    for i in range(n-1):
+        print(" "*(i+1)+(2*((n-2)-i)+1)*'*')
+
+def bordered_diamond(c):
     for i in range(11):
         print('*',end=' ')
     print('')
@@ -97,5 +103,6 @@ filled_square()
 bordered_square()
 bordered_dia()
 diagonals()
-diamond()
+diamond(18)
+diamond2(10)
 bordered_diamond()
